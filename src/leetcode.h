@@ -14,6 +14,8 @@
 // 
 // =====================================================================================
 
+#include <cctype>
+#include <climits>
 #include <iostream>
 #include <sstream>
 #include <vector>
