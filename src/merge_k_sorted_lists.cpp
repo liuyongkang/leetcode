@@ -14,6 +14,10 @@
 // 
 // =====================================================================================
 
+/*
+ * 虽然用了归并，但是实际情况并不好
+ */
+
 #include "leetcode.h"
 #include "list.h"
 
@@ -72,13 +76,7 @@ ListNode *mergeKLists(vector<ListNode *> &lists)
 
 int main(int argc, char *argv[])
 {
-	vector<ListNode *> lists;
-	ListNode a(1), b(2);
-	lists.push_back(&a);
-	lists.push_back(NULL);
-	lists.push_back(&b);
 
-	mergeKLists(lists);
 
 	return 0;
 }
