@@ -14,6 +14,7 @@
 // 
 // =====================================================================================
 
+#include <cstring>
 #include <cctype>
 #include <climits>
 #include <iostream>
