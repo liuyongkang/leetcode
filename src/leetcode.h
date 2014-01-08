@@ -14,6 +14,7 @@
 // 
 // =====================================================================================
 
+#include <cmath>
 #include <cstring>
 #include <cctype>
 #include <climits>
@@ -23,8 +24,10 @@
 #include <stack>
 #include <queue>
 #include <map>
+#include <unordered_map>
 #include <utility>
 #include <set>
+#include <unordered_set>
 #include <algorithm>
 
 #define max(a,b) ((a) > (b) ? (a) : (b))
