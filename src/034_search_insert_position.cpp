@@ -1,11 +1,11 @@
 // =====================================================================================
 // 
-//       Filename:  033_search_for_a_range.cpp
+//       Filename:  034_search_insert_position.cpp
 //
 //    Description:  
 //
 //        Version:  1.0
-//        Created:  2014年01月12日 11时18分12秒
+//        Created:  2014年01月12日 11时29分29秒
 //       Revision:  none
 //       Compiler:  g++
 //
@@ -15,16 +15,15 @@
 // =====================================================================================
 
 /**
- * 仍然是对二分查找进行修改，找出第一个和最后一个，时间复杂度不变
+ * 还是对二分查找的特定修改，时间复杂度不变
  */
 
 #include "leetcode.h"
 
-vector<int> searchRange(int A[], int n, int target)
+int searchInsert(int A[], int n, int target)
 {
 	int b = 0, e = n;
 	int m;
-	vector<int> ans;
 
 	while (b < e - 1) {
 		m = (b + e) / 2;
@@ -35,29 +34,7 @@ vector<int> searchRange(int A[], int n, int target)
 		}
 	}
 
-	if (A[b] == target) {
-		ans.push_back(b);
-	} else {
-		ans.push_back(-1);
-		ans.push_back(-1);
-		return ans;
-	}
-	
-	b = 0;
-	e = n;
-
-	while (b < e - 1) {
-		m = (b + e) / 2;
-		if (target >= A[m]) {
-			b = m;
-		} else {
-			e = m;
-		}
-	}
-
-	ans.push_back(b);
-
-	return ans;
+	return (target > A[b]) ? b + 1 : b;
 }
 
 int main(int argc, char *argv[])
