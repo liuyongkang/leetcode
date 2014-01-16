@@ -46,8 +46,6 @@ int trap(int A[], int n)
 
 int main(int argc, char *argv[])
 {
-	int A[]={0,1,0,2,1,0,1,3,2,1,2,1};
-	cout<<trap(A, 12)<<endl;
 
 
 	return 0;

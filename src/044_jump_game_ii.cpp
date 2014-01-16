@@ -1,11 +1,11 @@
 // =====================================================================================
 // 
-//       Filename:  040_first_missing_positive.cpp
+//       Filename:  044_jump_game_ii.cpp
 //
 //    Description:  
 //
 //        Version:  1.0
-//        Created:  2014年01月16日 16时43分18秒
+//        Created:  2014年01月16日 21时01分48秒
 //       Revision:  none
 //       Compiler:  g++
 //
@@ -15,31 +15,27 @@
 // =====================================================================================
 
 /**
- * 调整正数的到特定位置，然后就可找到，时间复杂度O(n)，空间复杂度O(1)
+ * 用一个数组来标记到每个位置的最少jump，时间复杂度O(n)，空间复杂度O(n)
  */
 
 #include "leetcode.h"
 
-int firstMissingPositive(int A[], int n)
+int jump(int A[], int n)
 {
-	int i = 0;
-	while (i < n) {
-		if (A[i] > 0 && A[i] < n && A[i] != A[A[i] - 1]) {
-			swap(A[i], A[A[i] - 1]);
-		} else {
-			++i;
+	int num[n];
+	int cur_longest = 0;
+
+	num[0] = 0;
+	for (int i = 0; i < n - 1; ++i) {
+		if (A[i] + i > cur_longest) {
+			for (int j = cur_longest + 1; j <= A[i] + i; ++j) {
+				num[j] = num[i] + 1;
+			}
+			cur_longest = A[i] + i;
 		}
 	}
 
-	int ans = n + 1;
-	for (int i = 0; i != n; ++i) {
-		if (A[i] != i + 1) {
-			ans = i + 1;
-			break;
-		}
-	}
-
-	return ans;
+	return num[n - 1];
 }
 
 int main(int argc, char *argv[])
