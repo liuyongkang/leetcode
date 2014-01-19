@@ -21,6 +21,8 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <list>
+#include <deque>
 #include <stack>
 #include <queue>
 #include <map>
